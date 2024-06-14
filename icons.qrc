@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="ekle">
+    <file>icons/dosyaekle.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>icons/jsproduction-icon-1.png</file>
+  </qresource>
+  <qresource prefix="cikar">
+    <file>icons/dosyacikar.png</file>
+  </qresource>
+  <qresource prefix="video">
+    <file>icons/videodanal.png</file>
+  </qresource>
+  <qresource prefix="play">
+    <file>icons/play.png</file>
+  </qresource>
+  <qresource prefix="pause">
+    <file>icons/pause.png</file>
+  </qresource>
+  <qresource prefix="convert">
+    <file>icons/donustur.png</file>
+  </qresource>
+  <qresource prefix="gozat">
+    <file>icons/gozat.png</file>
+  </qresource>
+  <qresource prefix="folder">
+    <file>icons/dosyaac.png</file>
+  </qresource>
+</RCC>
