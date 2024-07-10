@@ -311,9 +311,6 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     import sys
-    
-    
-
     app = QApplication(sys.argv)
     window = Anasayfa()
     window.show()
