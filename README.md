@@ -2,6 +2,8 @@
 JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları içerisinde (mp4,mp3,ogg,wav) dönüşüm yapan, dönüşüm yaparken de kalitesini belirleyebildiğiniz bir programdır. Python ile yazılan programın düzgün çalışması için bilgisayarda ffmpeg codec'lerinin kurulu olması ve ffmpeg.exe dosyasının yolunun path içerisine eklenmiş olması gerekmektedir.
 <p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
 <p></p>
+<h2>Gereksinimler</h2>
+Program ffmpeg modülünü kullandığından, ffmpeg modülünün bilgisayarınıza kurulmuş ve  sistem "Path" yolunda tanımlanmış olması gereklidir. Programın ilerleyen versiyonlarında modülü direkt bilgisayarınıza kuracağınız bir paket ile geliştrime yapacağız. 
 <h2 font size="14">Programın Kullanılışı</h2>
 JSPConverter programı, hızlıca ses formatı dönüştürme işlemi yapabileceğiniz, hatta youtube ve sosyal medya içeriklerinden video indirip, videonun sesini alabileceğiniz güçlü bir programdır. Kullanımı kısaca şöyledir:
 <ul>
