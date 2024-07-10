@@ -98,25 +98,45 @@ class ConvertThread(QThread):
                 QMessageBox.warning(self, "Hata", "Video ses dosyası çevirme sırasında bir hata oluştu.", QMessageBox.Ok)
                 print(f"Hata: {e}")
                 
-                
-        try:
-            audio = AudioSegment.from_ogg(input_path)
-            if self.comboBoxText == ".ogg":
-                audio.export(output_path, format="ogg", codec="libvorbis", parameters=["-b:a", f"{int(desired_bit_rate)*50}k"])
-            elif self.comboBoxText == ".wav":
-                audio = audio.set_frame_rate(44100)
-                audio = audio.set_sample_width(4)
-                audio.export(output_path, format="wav")
-            elif self.comboBoxText == ".mp3":
-                mp3_audio = audio.export(output_path, format="mp3", bitrate=desired_bit_rate)
-                audiofile = ID3(output_path)
-                yeni_encoder_etiketi = "JSP Converter-(c)-2023 by JSP Bilgi İşlem - Özgür CENGİZ"
-                audiofile.add(TENC(encoding=3, text=yeni_encoder_etiketi))
-                audiofile.save(output_path)
-                
-                print(f"{input_path} dosyası {output_path} dosyasına {desired_bit_rate} bit hızında dönüştürüldü.")
-        except Exception as e:
-            print(f"Hata: {e}")
+        elif uzanti == ".ogg":        
+            try:
+                audio = AudioSegment.from_ogg(input_path)
+                if self.comboBoxText == ".ogg":
+                    audio.export(output_path, format="ogg", codec="libvorbis", parameters=["-b:a", f"{int(desired_bit_rate)*50}k"])
+                elif self.comboBoxText == ".wav":
+                    audio = audio.set_frame_rate(44100)
+                    audio = audio.set_sample_width(4)
+                    audio.export(output_path, format="wav")
+                elif self.comboBoxText == ".mp3":
+                    mp3_audio = audio.export(output_path, format="mp3", bitrate=desired_bit_rate)
+                    audiofile = ID3(output_path)
+                    yeni_encoder_etiketi = "JSP Converter-(c)-2023 by JSP Bilgi İşlem - Özgür CENGİZ"
+                    audiofile.add(TENC(encoding=3, text=yeni_encoder_etiketi))
+                    audiofile.save(output_path)
+                    
+                    print(f"{input_path} dosyası {output_path} dosyasına {desired_bit_rate} bit hızında dönüştürüldü.")
+            except Exception as e:
+                print(f"Hata: {e}")
+            
+        elif uzanti == ".mp3":        
+            try:
+                audio = AudioSegment.from_mp3(input_path)
+                if self.comboBoxText == ".ogg":
+                    audio.export(output_path, format="ogg", codec="libvorbis", parameters=["-b:a", f"{int(desired_bit_rate)*50}k"])
+                elif self.comboBoxText == ".wav":
+                    audio = audio.set_frame_rate(44100)
+                    audio = audio.set_sample_width(4)
+                    audio.export(output_path, format="wav")
+                elif self.comboBoxText == ".mp3":
+                    mp3_audio = audio.export(output_path, format="mp3", bitrate=desired_bit_rate)
+                    audiofile = ID3(output_path)
+                    yeni_encoder_etiketi = "JSP Converter-(c)-2023 by JSP Bilgi İşlem - Özgür CENGİZ"
+                    audiofile.add(TENC(encoding=3, text=yeni_encoder_etiketi))
+                    audiofile.save(output_path)
+                    
+                    print(f"{input_path} dosyası {output_path} dosyasına {desired_bit_rate} bit hızında dönüştürüldü.")
+            except Exception as e:
+                print(f"Hata: {e}")
             
             
         
