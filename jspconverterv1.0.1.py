@@ -199,23 +199,25 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
     def load_language_setting(self):
         settings = QSettings("JSP_Bilgi_İşlem", "MusicConverter")
         language = settings.value("language", QLocale.system().name())
+        #print(language)
         if language is None:
             # Varsayılan dili ayarlayalım
-            language = 'tr'
+            language = 'en'
 
         if language.startswith('tr'):
             return 'tr'
         else:
             return 'en'
 
-    def set_language(self, language='tr'):
+    def set_language(self, language):
+        
         if language == 'tr':
             self.translator.load('main2_form_tr.qm')
         else:
             self.translator.load('main2_form_en.qm')
         
         QApplication.instance().installTranslator(self.translator)
-        self.retranslateUi(self)
+        
         self.save_language_setting(language)
         self.retranslateUi(self)  # Bu satırı ekleyin
         
@@ -224,18 +226,18 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
         settings.setValue("language", language)
 
     def retranslateUi(self, MainWindow):
+        self.converter.retranslateUi(MainWindow)
         # Bu metot dil değiştirme işlemi sırasında kullanılacak
         _translate = QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "JSP Audio Converter"))
-        self.converter.pushButton_5.setText(_translate("MainWindow", "Videodan Al"))
-        self.converter.pushButton_4.setText(_translate("MainWindow", "Dönüştür"))
-        self.converter.pushButton_8.setText(_translate("MainWindow", "Çıktı Klasörünü Aç"))
+        
         # Diğer bileşenlerin de metinlerini burada güncelleyebilirsiniz
 
     def klasorac(self):
         if self.output_folder:
             QDesktopServices.openUrl(QUrl.fromLocalFile(self.output_folder))
         else:
+            
             QMessageBox.information(self, "UYARI", "Çıktı klasörü seçilmemiş!", QMessageBox.Ok)
 
     def dragEnterEvent(self, event):
@@ -288,6 +290,7 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
     def show_file_dialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog  # Ağ bağlantılarını göstermek için bu seçeneği ekleyin
+        _translate = QCoreApplication.translate
         files, _ = QFileDialog.getOpenFileNames(self, "Müzik Dosyalarını Seçin", "", "Müzik Dosyaları (*.mp3 *.ogg *.wav *.mp4)")
 
         if files:
