@@ -113,7 +113,7 @@ color:rgba(0,0,0,240);
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Video'dan Al</string>
+         <string>Videodan Al</string>
         </property>
         <property name="icon">
          <iconset resource="icons.qrc">
@@ -365,7 +365,7 @@ color:rgba(0,0,0,240);
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Opsiyonlar</string>
+         <string>Dil Tercihi</string>
         </property>
        </widget>
       </item>

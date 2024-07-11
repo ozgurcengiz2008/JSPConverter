@@ -237,7 +237,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "JSP Audio Converter"))
-        self.pushButton_5.setText(_translate("MainWindow", "Video\'dan Al"))
+        self.pushButton_5.setText(_translate("MainWindow", "Videodan Al"))
         self.label_4.setText(_translate("MainWindow", "  ÇIKTI AYARLARI"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Çıktı dosyalarının kaydedileceği dizini seçiniz."))
         self.pushButton_7.setText(_translate("MainWindow", "Gözat"))
@@ -247,7 +247,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Sabit Bit Oranı"))
         self.pushButton_2.setText(_translate("MainWindow", "Dosya Sil"))
         self.pushButton_4.setText(_translate("MainWindow", "Dönüştür"))
-        self.pushButton_6.setText(_translate("MainWindow", "Opsiyonlar"))
+        self.pushButton_6.setText(_translate("MainWindow", "Dil Tercihi"))
 import icons_rc
 
 
