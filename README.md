@@ -28,15 +28,8 @@ The JSPConverter program is a powerful tool for quickly converting audio formats
     <li>The program's status bar provides information about the tasks being performed or completed. Above the status bar, there is a progress bar showing the progress of the conversion process.</li>
   </ul>
 </p>
-  <style>
-  .double-line {
-    border: 0;
-    border-top: 3px double #000;
-    height: 0;
-    margin: 20px 0;
-  }
-</style>
-<hr class="double-line">
+  
+<hr>
 <h1 font size="18"> JSPConverter___(Tr) </h1><br>
 JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları içerisinde (mp4,mp3,ogg,wav) dönüşüm yapan, dönüşüm yaparken de kalitesini belirleyebildiğiniz bir programdır. Python ile yazılan programın düzgün çalışması için bilgisayarda ffmpeg codec'lerinin kurulu olması ve <i>ffmpeg.exe</i> dosyasının yolunun path içerisine eklenmiş olması gerekmektedir.
 <p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
