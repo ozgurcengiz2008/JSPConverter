@@ -13,9 +13,7 @@ from yt_dlp_instance import indir
 from PyQt5.QtGui import QIcon
 import vlc
 from PyQt5.QtCore import QTranslator, QLocale, QSettings, QCoreApplication
-import certifi
-import urllib3
-import ssl
+
 
 
 class DownloadThread(QThread):
