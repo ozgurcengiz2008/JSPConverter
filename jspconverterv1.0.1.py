@@ -87,9 +87,9 @@ class ConvertThread(QThread):
             elif self.comboBoxText == ".ogg":
                 audio.export(output_path, format="ogg", codec="libvorbis", parameters=["-b:a", f"{int(desired_bit_rate)*50}k"])
 
-            print(f"{input_path} dosyası {output_path} dosyasına {desired_bit_rate} bit hızında dönüştürüldü.")
+            print(QCoreApplication.translate("CovertThread",f"{input_path} dosyası {output_path} dosyasına {desired_bit_rate} bit hızında dönüştürüldü."))
         except Exception as e:
-            print(f"Hata: {e}")
+            print(QCoreApplication.translate("CovertThread",f"Hata: {e}"))
 
 
 class Anasayfa(QMainWindow, Ui_MainWindow):
@@ -152,7 +152,7 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
 
         self.movie.stop()
         self.loading_label.setHidden(True)
-        self.converter.statusbar.showMessage('Hazır')
+        self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa", "Hazır"))
         
         # İkonları ayarlayalım
         self.play_icon = QIcon("icons/play.png")
@@ -162,7 +162,8 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
         
     def open_language_dialog(self):
         dialog = QDialog(self)
-        dialog.setWindowTitle("Dil Seçimi")
+        dialog.setWindowTitle(QCoreApplication.translate("Anasayfa", "Dil Seçimi"))
+        # eskisi: dialog.setWindowTitle("Dil Seçimi")
         dialog.resize(300, 100)
 
         layout = QVBoxLayout(dialog)
@@ -213,8 +214,10 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
         
         if language == 'tr':
             self.translator.load('main2_form_tr.qm')
+            
         else:
             self.translator.load('main2_form_en.qm')
+            
         
         QApplication.instance().installTranslator(self.translator)
         
@@ -230,7 +233,8 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
         # Bu metot dil değiştirme işlemi sırasında kullanılacak
         _translate = QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "JSP Audio Converter"))
-        
+        self.converter.statusbar.showMessage(_translate("Anasayfa", "Hazır"))
+        self.bitchange()
         # Diğer bileşenlerin de metinlerini burada güncelleyebilirsiniz
 
     def klasorac(self):
@@ -238,7 +242,12 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
             QDesktopServices.openUrl(QUrl.fromLocalFile(self.output_folder))
         else:
             
-            QMessageBox.information(self, "UYARI", "Çıktı klasörü seçilmemiş!", QMessageBox.Ok)
+            QMessageBox.information(
+            self, 
+            QCoreApplication.translate("Anasayfa", "UYARI"), 
+            QCoreApplication.translate("Anasayfa", "Çıktı klasörü seçilmemiş!"), 
+            QMessageBox.Ok
+            )
 
     def dragEnterEvent(self, event):
         if event.mimeData().hasUrls:
@@ -275,24 +284,29 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
             self.quality = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
             for kalite in self.quality:
                 self.converter.comboBox_2.addItem(str(kalite))
-            self.converter.label_3.setText("Kalite:")
+            self.converter.label_3.setText(QCoreApplication.translate("MainWindow", "Kalite:"))
         elif self.converter.comboBox.currentText() == ".mp3":
             self.converter.comboBox_2.setEnabled(True)
             self.converter.comboBox_2.clear()
             for bit in self.CBR:
                 self.converter.comboBox_2.addItem(str(bit) + "k")
-            self.converter.label_3.setText("Sabit Bit Oranı:")
+            self.converter.label_3.setText(QCoreApplication.translate("MainWindow", "Sabit Bit Oranı:"))
         elif self.converter.comboBox.currentText() == ".wav":
             self.converter.comboBox_2.setEnabled(False)
             self.converter.comboBox_2.clear()
-            self.converter.label_3.setText("Wav Formatı:")
+            self.converter.label_3.setText(QCoreApplication.translate("MainWindow", "WAV Formatı:"))
 
     def show_file_dialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog  # Ağ bağlantılarını göstermek için bu seçeneği ekleyin
-        _translate = QCoreApplication.translate
-        files, _ = QFileDialog.getOpenFileNames(self, "Müzik Dosyalarını Seçin", "", "Müzik Dosyaları (*.mp3 *.ogg *.wav *.mp4)")
-
+        
+        files, _ = QFileDialog.getOpenFileNames(
+                                self, 
+                                QCoreApplication.translate("Anasayfa", "Müzik Dosyalarını Seçin"), 
+                                "",
+                                QCoreApplication.translate("Anasayfa", "Müzik Dosyaları (*.mp3 *.ogg *.wav *.mp4);;All files (*)"),
+                                )
+        
         if files:
             for file in files:
                 self.input_files.append(file)
@@ -300,7 +314,9 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
                 self.input.addItem(item)
 
     def get_output_folder(self):
-        self.output_folder = QFileDialog.getExistingDirectory(self, "Çıktı Klasörünü Seçin")
+        self.output_folder = QFileDialog.getExistingDirectory(self, 
+                                    QCoreApplication.translate ("Anasayfa","Çıktı Klasörünü Seçin"))
+                                    
         self.converter.lineEdit.setText(self.output_folder)
 
     def sil(self):
@@ -313,12 +329,12 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
 
     def show_video_input_dialog(self):
         dialog = QDialog(self)
-        dialog.setWindowTitle("YouTube URL'si Girin")
+        dialog.setWindowTitle(QCoreApplication.translate("Anasayfa","YouTube URL'si Girin"))
         dialog.resize(400, 100)
 
         layout = QVBoxLayout(dialog)
         line_edit = QLineEdit(dialog)
-        line_edit.setPlaceholderText("YouTube URL'si buraya girin...")
+        line_edit.setPlaceholderText(QCoreApplication.translate("Anasayfa","YouTube URL'si buraya girin..."))
         layout.addWidget(line_edit)
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel, dialog)
@@ -341,7 +357,7 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
         if not video_url:
             return
 
-        self.converter.statusbar.showMessage('İndirme işlemi başlıyor...')
+        self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'İndirme işlemi başlıyor...'))
         self.movie.start()
         self.loading_label.setHidden(False)
 
@@ -357,29 +373,37 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
             self.input_files.append(output_file)
             item = QListWidgetItem(output_file)
             self.input.addItem(item)
-            self.converter.statusbar.showMessage('İndirme tamamlandı')
+            self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'İndirme tamamlandı'))
         else:
-            self.converter.statusbar.showMessage('İndirme başarısız oldu', 5000)
-            QMessageBox.warning(self, "Hata", "İndirme işlemi başarısız oldu.", QMessageBox.Ok)
-
+            self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'İndirme başarısız oldu', 5000))
+            QMessageBox.warning(self, 
+                                QCoreApplication.translate("Anasayfa","Hata"),
+                                QCoreApplication.translate("Anasayfa","İndirme işlemi başarısız oldu.", QMessageBox.Ok)
+                                )
     def update_progress(self, file_name, progress_value):
-        self.converter.statusbar.showMessage(f"{file_name} dosyası işleniyor... {progress_value}%")
+        self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",f"{file_name} dosyası işleniyor... {progress_value}%"))
         self.progressBar.setValue(progress_value)
         self.progressBar.setFormat(f"{file_name}: {progress_value}%")
 
     def convert(self):
         if not self.input_files:
-            QMessageBox.warning(self, "UYARI", "Dönüştürülecek dosya eklenmemiş!", QMessageBox.Ok)
+            QMessageBox.warning(self, 
+                                QCoreApplication.translate("Anasayfa","UYARI"),
+                                QCoreApplication.translate("Anasayfa","Dönüştürülecek dosya eklenmemiş!"), QMessageBox.Ok)
+                                
             return
 
         if not self.output_folder:
-            QMessageBox.warning(self, "UYARI", "Çıktı klasörü seçilmemiş!", QMessageBox.Ok)
+            QMessageBox.warning(self, 
+                                QCoreApplication.translate("Anasayfa","UYARI"), 
+                                QCoreApplication.translate("Anasayfa","Çıktı klasörü seçilmemiş!"), QMessageBox.Ok)
+                                
             return
 
         self.movie.start()
         self.loading_label.setHidden(False)
         self.progressBar.setValue(0)
-        self.converter.statusbar.showMessage('Dönüştürme işlemi başlıyor...')
+        self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'Dönüştürme işlemi başlıyor...'))
 
         desired_bit_rate = self.converter.comboBox_2.currentText()
         comboBoxText = self.converter.comboBox.currentText()
@@ -391,12 +415,16 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
     def on_convert_finished(self):
         self.movie.stop()
         self.loading_label.setHidden(True)
-        self.converter.statusbar.showMessage('Dönüştürme tamamlandı')
+        self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'Dönüştürme tamamlandı'))
 
     def play_music(self):
         selected_items = self.input.selectedItems()
         if not selected_items:
-            QMessageBox.warning(self, "UYARI", "Oynatılacak müzik dosyası seçilmemiş!", QMessageBox.Ok)
+            QMessageBox.warning(self, 
+                                QCoreApplication.translate("Anasayfa","UYARI"),
+                                QCoreApplication.translate("Anasayfa","Oynatılacak müzik dosyası seçilmemiş!"), 
+                                QMessageBox.Ok)
+                                
             return
 
         selected_file = selected_items[0].text()
@@ -406,12 +434,13 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
                 self.mediaplayer.set_media(self.instance.media_new(selected_file))
                 self.mediaplayer.play()
             self.converter.pushButton_3.setIcon(self.pause_icon)
-            self.converter.statusbar.showMessage(f'Müzik çalıyor: {selected_file}')
+            translated_message = QCoreApplication.translate("Anasayfa", 'Müzik çalıyor: ')
+            self.converter.statusbar.showMessage(f'{translated_message} {selected_file}')
             self.is_playing = True
         else:
             self.mediaplayer.pause()
             self.converter.pushButton_3.setIcon(self.play_icon)
-            self.converter.statusbar.showMessage('Müzik duraklatıldı...')
+            self.converter.statusbar.showMessage(QCoreApplication.translate("Anasayfa",'Müzik duraklatıldı...'))
             self.is_playing = False
 
 
