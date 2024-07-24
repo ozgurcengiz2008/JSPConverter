@@ -33,12 +33,13 @@ The JSPConverter program is a powerful tool for quickly converting audio formats
 <hr>
 <h1 font size="18"> JSPConverter___(Tr) </h1><br>
 JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları içerisinde (mp4,mp3,ogg,wav) dönüşüm yapan, dönüşüm yaparken de kalitesini belirleyebildiğiniz bir programdır. Python ile yazılan programın düzgün çalışması için bilgisayarda ffmpeg codec'lerinin kurulu olması ve <i>ffmpeg.exe</i> dosyasının yolunun path içerisine eklenmiş olması gerekmektedir.<p>
-  <p> İkinci olarak VLC player indirilip kurulmalıdır. Açık kaynak bir medya oynatıcısı olan VLC'nin video çevirme için kütüphaneleri kullanılmaktadır. Bu sebeple gereklidir. VLC Player'i https://www.videolan.org/index.tr.html adresindeki orjinal konumundan indirip kurabilirsiniz.
-<p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
-<p></p>
+  
 <h2>Gereksinimler</h2>
 Program ffmpeg modülünü kullandığından, ffmpeg modülünün bilgisayarınıza kurulmuş ve  sistem <b>"Path"</b> yolunda tanımlanmış olması gereklidir. Modül <i><b>https://www.ffmpeg.org/download.html </i></b>adresinden derlenmiş olarak indirilebilir. ffmpeg'i bilgisayarınıza nasıl kuracağınız konusunda
 <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows </b></i>adresinde adım adım anlatım bulabilirsiniz. Programın ilerleyen versiyonlarında modülü direkt bilgisayarınıza kuracağınız bir paket ile geliştrime yapacağız. 
+  <p> İkinci olarak VLC player indirilip kurulmalıdır. Açık kaynak bir medya oynatıcısı olan VLC'nin video çevirme için kütüphaneleri kullanılmaktadır. Bu sebeple gereklidir. VLC Player'i https://www.videolan.org/index.tr.html adresindeki orjinal konumundan indirip kurabilirsiniz.
+<p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
+<p></p>
 <h2 font size="14">Programın Kullanılışı</h2>
 JSPConverter programı, hızlıca ses formatı dönüştürme işlemi yapabileceğiniz, hatta youtube ve sosyal medya içeriklerinden video indirip, videonun sesini alabileceğiniz güçlü bir programdır. Kullanımı kısaca şöyledir:
 <ul>
