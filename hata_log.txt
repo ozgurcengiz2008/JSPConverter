@@ -1,1 +1,1 @@
-Hata: [0;31mERROR:[0m Postprocessing: audio conversion failed: Unknown encoder 'libmp3lame'
+Hata: [0;31mERROR:[0m [youtube] 3YL4Btzcf2Q: Requested format is not available. Use --list-formats for a list of available formats

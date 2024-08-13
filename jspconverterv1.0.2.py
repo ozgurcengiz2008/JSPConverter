@@ -72,6 +72,8 @@ class ConvertThread(QThread):
                 audio = AudioSegment.from_ogg(input_path)
             elif uzanti == ".mp3":
                 audio = AudioSegment.from_mp3(input_path)
+            elif uzanti == ".m4a":
+                audio = AudioSegment.from_file(input_path, format="m4a")
 
             if self.comboBoxText == ".mp3":
                 audio.export(output_path, format="mp3", bitrate=desired_bit_rate)
@@ -303,7 +305,7 @@ class Anasayfa(QMainWindow, Ui_MainWindow):
                                 self, 
                                 QCoreApplication.translate("Anasayfa", "Müzik Dosyalarını Seçin"), 
                                 "",
-                                QCoreApplication.translate("Anasayfa", "Müzik Dosyaları (*.mp3 *.ogg *.wav *.mp4);;All files (*)"),
+                                QCoreApplication.translate("Anasayfa", "Müzik Dosyaları (*.mp3 *.ogg *.wav *.mp4 *.m4a);;All files (*)"),
                                 )
         
         if files:

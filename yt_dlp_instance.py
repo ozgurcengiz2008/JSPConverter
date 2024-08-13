@@ -18,7 +18,7 @@ def indir(video_url):
             os.makedirs(yol)
         
         ydl_opts = {
-            'format': 'best',
+            'format': '140',  # Format kodunu burada belirtiyorsunuz, eski ayar best idi. Artık kullanılmıyor. Video için diğer kodlara ytp-dl --list-formats "youtube linki" ifadesiyle bakılabilir.
             'outtmpl': os.path.join(yol, '%(title)s.%(ext)s'),
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
