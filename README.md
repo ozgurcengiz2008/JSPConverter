@@ -3,7 +3,8 @@ The JSP Converter program is a simple application that converts audio formats (m
 <p>In this context, the JSPConvert program, a fast converter, is very easy to use.</p>
 <p></p>
 <h2>Requirements</h2>
-Since the program uses the ffmpeg module, the ffmpeg module must be installed on your computer and defined in the system <b>"Path"</b>. The module can be downloaded precompiled from <i><b>https://www.ffmpeg.org/download.html</i></b>. For a step-by-step guide on how to install ffmpeg on your computer, you can refer to <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows</b></i>. In future versions of the program, we will develop a package that will directly install the module on your computer.
+Since the program uses the ffmpeg module, the ffmpeg module must be installed on your computer and defined in the system <b>"Path"</b>. The module can be downloaded precompiled from <i><b>https://www.ffmpeg.org/download.html</i></b>. For a step-by-step guide on how to install ffmpeg on your computer, you can refer to <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows</b></i>. In future versions of the program, we will develop a package that will directly install the module on your computer.<p>
+  <p></p>Secondly, VLC player must be downloaded and installed. Libraries of VLC, an open source media player, are used for video conversion. For this reason it is necessary. You can download and install VLC Player from its original location at https://www.videolan.org/index.tr.html.
 <h2 font size="14">Usage of the Program</h2>
 The JSPConverter program is a powerful tool for quickly converting audio formats and even downloading videos from YouTube and social media content and extracting the audio from the video. Here's a brief overview of how to use it:
 <ul>
@@ -31,12 +32,14 @@ The JSPConverter program is a powerful tool for quickly converting audio formats
   
 <hr>
 <h1 font size="18"> JSPConverter___(Tr) </h1><br>
-JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları içerisinde (mp4,mp3,ogg,wav) dönüşüm yapan, dönüşüm yaparken de kalitesini belirleyebildiğiniz bir programdır. Python ile yazılan programın düzgün çalışması için bilgisayarda ffmpeg codec'lerinin kurulu olması ve <i>ffmpeg.exe</i> dosyasının yolunun path içerisine eklenmiş olması gerekmektedir.
-<p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
-<p></p>
+JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları içerisinde (mp4,mp3,ogg,wav) dönüşüm yapan, dönüşüm yaparken de kalitesini belirleyebildiğiniz bir programdır. Python ile yazılan programın düzgün çalışması için bilgisayarda ffmpeg codec'lerinin kurulu olması ve <i>ffmpeg.exe</i> dosyasının yolunun path içerisine eklenmiş olması gerekmektedir.<p>
+  
 <h2>Gereksinimler</h2>
 Program ffmpeg modülünü kullandığından, ffmpeg modülünün bilgisayarınıza kurulmuş ve  sistem <b>"Path"</b> yolunda tanımlanmış olması gereklidir. Modül <i><b>https://www.ffmpeg.org/download.html </i></b>adresinden derlenmiş olarak indirilebilir. ffmpeg'i bilgisayarınıza nasıl kuracağınız konusunda
 <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows </b></i>adresinde adım adım anlatım bulabilirsiniz. Programın ilerleyen versiyonlarında modülü direkt bilgisayarınıza kuracağınız bir paket ile geliştrime yapacağız. 
+  <p> İkinci olarak VLC player indirilip kurulmalıdır. Açık kaynak bir medya oynatıcısı olan VLC'nin video çevirme için kütüphaneleri kullanılmaktadır. Bu sebeple gereklidir. VLC Player'i https://www.videolan.org/index.tr.html adresindeki orjinal konumundan indirip kurabilirsiniz.
+<p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
+<p></p>
 <h2 font size="14">Programın Kullanılışı</h2>
 JSPConverter programı, hızlıca ses formatı dönüştürme işlemi yapabileceğiniz, hatta youtube ve sosyal medya içeriklerinden video indirip, videonun sesini alabileceğiniz güçlü bir programdır. Kullanımı kısaca şöyledir:
 <ul>
