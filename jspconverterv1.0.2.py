@@ -74,6 +74,8 @@ class ConvertThread(QThread):
                 audio = AudioSegment.from_mp3(input_path)
             elif uzanti == ".m4a":
                 audio = AudioSegment.from_file(input_path, format="m4a")
+            elif uzanti == ".wav":
+                audio = AudioSegment.from_wav(input_path)
 
             if self.comboBoxText == ".mp3":
                 audio.export(output_path, format="mp3", bitrate=desired_bit_rate)
