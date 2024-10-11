@@ -4,7 +4,7 @@ The JSP Converter program is a simple application that converts audio formats (m
 <p></p>
 <h2>Requirements</h2>
 Since the program uses the ffmpeg module, the ffmpeg module must be installed on your computer and defined in the system <b>"Path"</b>. The module can be downloaded precompiled from <i><b>https://www.ffmpeg.org/download.html</i></b>. For a step-by-step guide on how to install ffmpeg on your computer, you can refer to <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows</b></i>. In future versions of the program, we will develop a package that will directly install the module on your computer.<p>
-  <p></p>Secondly, VLC player must be downloaded and installed. Libraries of VLC, an open source media player, are used for video conversion. For this reason it is necessary. You can download and install VLC Player from its original location at https://www.videolan.org/index.tr.html.
+  <p>Secondly, VLC player must be downloaded and installed. Libraries of VLC, an open source media player, are used for video conversion. For this reason it is necessary. You can download and install VLC Player from its original location at https://www.videolan.org/index.tr.html.<b><i>You must download and install 64bit VLC Player Windows, not 32 bit, otherwise it wont work!</i></b></p>
 <h2 font size="14">Usage of the Program</h2>
 The JSPConverter program is a powerful tool for quickly converting audio formats and even downloading videos from YouTube and social media content and extracting the audio from the video. Here's a brief overview of how to use it:
 <ul>
@@ -37,7 +37,7 @@ JSP Converter programı, basitçe ffmpeg modülünü kullanarak ses formatları 
 <h2>Gereksinimler</h2>
 Program ffmpeg modülünü kullandığından, ffmpeg modülünün bilgisayarınıza kurulmuş ve  sistem <b>"Path"</b> yolunda tanımlanmış olması gereklidir. Modül <i><b>https://www.ffmpeg.org/download.html </i></b>adresinden derlenmiş olarak indirilebilir. ffmpeg'i bilgisayarınıza nasıl kuracağınız konusunda
 <i><b>https://www.wikihow.com/Install-FFmpeg-on-Windows </b></i>adresinde adım adım anlatım bulabilirsiniz. Programın ilerleyen versiyonlarında modülü direkt bilgisayarınıza kuracağınız bir paket ile geliştrime yapacağız. 
-  <p> İkinci olarak VLC player indirilip kurulmalıdır. Açık kaynak bir medya oynatıcısı olan VLC'nin video çevirme için kütüphaneleri kullanılmaktadır. Bu sebeple gereklidir. VLC Player'i https://www.videolan.org/index.tr.html adresindeki orjinal konumundan indirip kurabilirsiniz.
+  <p> İkinci olarak VLC player indirilip kurulmalıdır. Açık kaynak bir medya oynatıcısı olan VLC'nin video çevirme için kütüphaneleri kullanılmaktadır. Bu sebeple gereklidir. VLC Player'i https://www.videolan.org/index.tr.html adresindeki orjinal konumundan indirip kurabilirsiniz. <b><i>VLC'nin mutlaka 64 bit Windows için olan sürümünü indiriniz!</i></b>
 <p>Bu bağlamda, hızlı bir çevirici olan JSPConvert programının kullanımı çok kolaydır.</p>
 <p></p>
 <h2 font size="14">Programın Kullanılışı</h2>
